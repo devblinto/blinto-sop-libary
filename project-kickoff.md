@@ -1,7 +1,7 @@
 ---
 title: Project Kickoff
 type: sop
-department: Project Delivery
+department: Project Management
 owner: Project Delivery
 status: approved
 version: 1.0

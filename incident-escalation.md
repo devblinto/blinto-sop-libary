@@ -1,8 +1,10 @@
 ---
 title: Incident Escalation
 type: sop
-department: Company
-owner: Operations
+department: Operations & Finance
+owner: Operations & Finance
+supporting_departments:
+  - Relevant department (by incident type)
 status: approved
 version: 1.0
 last_reviewed: 2026-08-19

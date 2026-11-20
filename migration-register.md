@@ -1,7 +1,7 @@
 ---
 title: SOP Library Migration Register
 type: reference
-department: Company
+department: Operations & Finance
 owner: SOP Library Team
 status: approved
 version: 2.0

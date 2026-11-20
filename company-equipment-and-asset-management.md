@@ -1,8 +1,10 @@
 ---
 title: Company Equipment & Asset Management
 type: sop
-department: People, Operations & Finance
-owner: People Operations
+department: Operations & Finance
+owner: Operations & Finance
+supporting_departments:
+  - People & Culture
 status: approved
 version: 1.0
 last_reviewed: 2026-08-19

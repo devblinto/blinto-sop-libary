@@ -1,7 +1,7 @@
 ---
 title: WordPress Security Checklist
 type: checklist
-department: Engineering
+department: Development
 owner: Technical Lead
 status: approved
 version: 1.0

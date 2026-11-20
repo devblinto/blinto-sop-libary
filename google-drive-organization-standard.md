@@ -1,8 +1,8 @@
 ---
 title: Google Drive Organization Standard
 type: reference
-department: Company
-owner: People Operations
+department: Operations & Finance
+owner: Operations & Finance
 status: approved
 version: 1.0
 last_reviewed: 2026-08-19

@@ -1,8 +1,8 @@
 ---
 title: Attendance Policy
 type: policy
-department: Company
-owner: People Operations
+department: People & Culture
+owner: People & Culture
 status: approved
 version: 1.5
 last_reviewed: 2026-11-12

@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import { remark } from "remark";
 import remarkGfm from "remark-gfm";
 import remarkHtml from "remark-html";
+import { DEPARTMENTS, sortDepartments } from "./departments";
 
 export type SopDocument = {
   slug: string;
@@ -11,6 +12,7 @@ export type SopDocument = {
   title: string;
   type: string;
   department: string;
+  supportingDepartments: string[];
   owner: string;
   status: string;
   version: string;
@@ -67,7 +69,8 @@ function buildDocument(filename: string): SopDocument {
     filename,
     title: String(data.title || filename.replace(/\.md$/, "")),
     type: String(data.type || "reference"),
-    department: String(data.department || "Company"),
+    department: String(data.department || "Unassigned"),
+    supportingDepartments: normalizeList(data.supporting_departments),
     owner: String(data.owner || "Unassigned"),
     status: String(data.status || "draft"),
     version: String(data.version || ""),
@@ -172,7 +175,7 @@ export function getFacetValues(documents: SopDocument[]) {
   const unique = (values: string[]) => [...new Set(values.filter(Boolean))].sort();
   return {
     types: unique(documents.map((doc) => doc.type)),
-    departments: unique(documents.map((doc) => doc.department)),
+    departments: sortDepartments(unique([...DEPARTMENTS, ...documents.map((doc) => doc.department)])),
     owners: unique(documents.map((doc) => doc.owner)),
     statuses: unique(documents.map((doc) => doc.status)),
   };

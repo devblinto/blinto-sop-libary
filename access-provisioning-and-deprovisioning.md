@@ -1,8 +1,10 @@
 ---
 title: Access Provisioning & Deprovisioning
 type: sop
-department: Company
-owner: People Operations
+department: Operations & Finance
+owner: Operations & Finance
+supporting_departments:
+  - People & Culture
 status: approved
 version: 1.2
 last_reviewed: 2026-11-02

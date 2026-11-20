@@ -1,8 +1,8 @@
 ---
 title: Leave Request & Handover
 type: sop
-department: People Operations
-owner: People Operations
+department: People & Culture
+owner: People & Culture
 status: approved
 version: 1.1
 last_reviewed: 2026-10-28

@@ -1,7 +1,7 @@
 ---
 title: Biweekly Sprint Planning, Execution & Review
 type: sop
-department: Company
+department: Project Management
 owner: Delivery Lead
 status: approved
 version: 1.1
@@ -31,7 +31,7 @@ related:
 
 ## Purpose and Scope
 
-Provide a single company-wide process to prepare, plan, execute, review and improve two-week work cycles across Engineering, Design, Growth, Client Operations, People Operations and CEO Office. Apply to both client-service and internal product work.
+Provide a single company-wide process to prepare, plan, execute, review and improve two-week work cycles across Development, Design, Growth, Project Management, Product, People & Culture, Operations & Finance and CEO's Office. Apply to both client-service and internal product work.
 
 Every sprint must clarify **why** it matters, **what** will be delivered, **who** owns it, **when** it is due, and **how** completion will be accepted.
 

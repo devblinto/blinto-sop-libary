@@ -1,7 +1,7 @@
 ---
 title: WordPress Security Standard
 type: policy
-department: Engineering
+department: Development
 owner: Technical Lead
 status: approved
 version: 1.0

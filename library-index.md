@@ -1,11 +1,11 @@
 ---
 title: Library Index & Roadmap
 type: reference
-department: Company
+department: Operations & Finance
 owner: SOP Library Team
 status: approved
-version: 2.4
-last_reviewed: 2026-10-22
+version: 2.5
+last_reviewed: 2026-11-20
 review_cycle: monthly
 tags:
   - index
@@ -34,6 +34,21 @@ GitHub `main` is the canonical source. This index is navigation and planning met
 - **Template** — reusable structure for creating a recurring artifact.
 - **Guide** — instructional guidance where judgment/adaptation is expected.
 - **Reference** — stable information, taxonomy, standard, map, migration register, or lookup resource.
+
+## Department Ownership
+
+Every document has one primary owning department, recorded in its `department` frontmatter. Shared processes list helping departments in `supporting_departments`; supporting departments help implement the document but are not co-owners.
+
+| Department | Scope | Documents |
+| --- | --- | --- |
+| People & Culture | Recruitment, employee lifecycle, employee relations, attendance, leave, performance, compensation policies, employee records, workplace culture and development | 37 |
+| Operations & Finance | Office administration, finance operations, payroll execution, procurement, assets, facilities, technology and security administration, workplace access and library governance | 20 |
+| Project Management | Sprint rhythm, client onboarding, kickoff, access collection, communication, QA and offboarding | 7 |
+| Development | Custom applications and WordPress security | 4 |
+| Growth | SEO intake and routing | 2 |
+| Design, Product, CEO's Office | Library categories reserved for future documents | 0 |
+
+The sections below group documents by operating domain, not by owning department.
 
 ## Governance & Authoring
 
@@ -118,7 +133,7 @@ GitHub `main` is the canonical source. This index is navigation and planning met
 | --- | --- | --- |
 | [Biweekly Sprint Planning, Execution & Review](./biweekly-sprint-planning-execution-and-review.md) | SOP | Biweekly planning day, committed work, capacity buffers, execution, review and continual improvement |
 
-## Engineering & Custom Applications
+## Development & Custom Applications
 
 | Canonical document | Type | Domain |
 | --- | --- | --- |

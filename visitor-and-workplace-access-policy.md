@@ -1,8 +1,8 @@
 ---
 title: Visitor & Workplace Access Policy
 type: policy
-department: People, Operations & Finance
-owner: People Operations
+department: Operations & Finance
+owner: Operations & Finance
 status: approved
 version: 1.0
 last_reviewed: 2026-11-12

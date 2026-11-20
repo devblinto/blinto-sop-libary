@@ -16,6 +16,17 @@ const REQUIRED_FIELDS = [
   "tags",
   "related",
 ];
+// Keep in sync with lib/departments.ts and library-standard.md.
+const DEPARTMENTS = new Set([
+  "People & Culture",
+  "Operations & Finance",
+  "Growth",
+  "Development",
+  "Design",
+  "Project Management",
+  "Product",
+  "CEO's Office",
+]);
 
 const files = fs
   .readdirSync(ROOT)
@@ -33,6 +44,10 @@ for (const filename of files) {
     if (!(field in parsed.data)) {
       errors.push(`${filename}: missing frontmatter field '${field}'`);
     }
+  }
+
+  if ("department" in parsed.data && !DEPARTMENTS.has(String(parsed.data.department))) {
+    errors.push(`${filename}: unknown department '${parsed.data.department}' (allowed: ${[...DEPARTMENTS].join(", ")})`);
   }
 
   const localLinks = [...parsed.content.matchAll(/\]\((?:\.\/)?([a-z0-9][a-z0-9-]*\.md)(?:#[^)]+)?\)/gi)];

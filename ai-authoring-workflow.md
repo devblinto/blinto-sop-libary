@@ -1,7 +1,7 @@
 ---
 title: AI-Assisted SOP Authoring Workflow
 type: guide
-department: Company
+department: Operations & Finance
 owner: SOP Library Team
 status: approved
 version: 1.0
@@ -116,7 +116,7 @@ Before submission, AI should provide a concise summary similar to:
 
 **Proposed:** Website Launch  
 **Type:** SOP  
-**Owner:** Engineering Lead  
+**Owner:** Development Lead  
 **Action:** Create  
 **Reuses:** WordPress Website Security; WordPress Pre-Launch Security Checklist  
 **Duplication detected:** None after linking existing controls  

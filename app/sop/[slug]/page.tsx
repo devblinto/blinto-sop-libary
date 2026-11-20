@@ -18,6 +18,11 @@ export default async function SopPage({ params }: { params: Promise<{ slug: stri
   const related = document.related
     .map((relatedSlug) => allDocuments.find((doc) => doc.slug === relatedSlug))
     .filter(Boolean);
+  const relatedSlugs = new Set(document.related);
+  const sameDepartment = allDocuments.filter(
+    (doc) => doc.department === document.department && doc.slug !== document.slug && !relatedSlugs.has(doc.slug),
+  );
+  const departmentHref = `/?department=${encodeURIComponent(document.department)}`;
 
   return (
     <div className="shell reader-shell">
@@ -25,7 +30,11 @@ export default async function SopPage({ params }: { params: Promise<{ slug: stri
         <Link href="/" className="back-link">← Back to library</Link>
         <dl className="meta-list">
           <Meta label="Type" value={document.type} />
-          <Meta label="Department" value={document.department} />
+          <div>
+            <dt>Department</dt>
+            <dd><Link href={departmentHref} className="meta-link">{document.department}</Link></dd>
+          </div>
+          <Meta label="Supporting departments" value={document.supportingDepartments.join(", ")} />
           <Meta label="Owner" value={document.owner} />
           <Meta label="Status" value={document.status} />
           <Meta label="Version" value={document.version} />
@@ -72,6 +81,23 @@ export default async function SopPage({ params }: { params: Promise<{ slug: stri
             <p className="eyebrow">Related documents</p>
             <div className="related-grid">
               {related.map((doc) => doc && (
+                <Link key={doc.slug} href={`/sop/${doc.slug}`}>
+                  <span>{doc.type}</span>
+                  <strong>{doc.title}</strong>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {sameDepartment.length > 0 && (
+          <section className="related-section">
+            <div className="related-heading">
+              <p className="eyebrow">More from {document.department}</p>
+              <Link href={departmentHref} className="meta-link">View all {sameDepartment.length + 1}</Link>
+            </div>
+            <div className="related-grid">
+              {sameDepartment.map((doc) => (
                 <Link key={doc.slug} href={`/sop/${doc.slug}`}>
                   <span>{doc.type}</span>
                   <strong>{doc.title}</strong>

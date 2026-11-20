@@ -1,8 +1,10 @@
 ---
 title: Meeting & Standup Participation Policy
 type: policy
-department: Company
-owner: People Operations
+department: People & Culture
+owner: People & Culture
+supporting_departments:
+  - Project Management
 status: approved
 version: 1.0
 last_reviewed: 2026-11-12

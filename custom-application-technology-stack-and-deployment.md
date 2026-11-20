@@ -1,14 +1,14 @@
 ---
 title: Custom Application Development & Deployment
 type: sop
-department: Engineering
-owner: Engineering Lead
+department: Development
+owner: Development Lead
 status: approved
 version: 1.0
 last_reviewed: 2026-10-28
 review_cycle: 6-months
 tags:
-  - engineering
+  - development
   - cloudflare
   - neon
   - postgresql
@@ -27,14 +27,14 @@ related:
 ## Purpose
 Standardize how Blinto builds, deploys, stores, operates, and maintains **new custom web applications, internal platforms, and SaaS products** with a portable, cost-conscious default stack. The standard is **GitHub (source code) + Cloudflare (web/app deployment) + Neon PostgreSQL (structured data) + Cloudflare R2 (object/file storage)**.
 
-This is the default, not permission to disrupt already-operating systems. Exceptions require a documented technical rationale and approval by the Engineering Lead; material strategic/cost exceptions escalate to the CEO.
+This is the default, not permission to disrupt already-operating systems. Exceptions require a documented technical rationale and approval by the Development Lead; material strategic/cost exceptions escalate to the CEO.
 
 ## Scope and when to use
 Apply to new Blinto-owned custom web applications (including Web Admin, internal business tools, and SaaS projects) and major rebuilds. Existing Shopify apps, WordPress projects, client-mandated platforms, long-running processes, mobile apps, and unsupported frameworks require a compatibility review rather than forced migration.
 
 ## Roles
 - **Project Engineer:** writes code, tests, migrations and deployment configuration; documents runbooks.
-- **Engineering Lead (owner):** approves architecture, production readiness, access and exceptions; assigns on-call/incident owner.
+- **Development Lead (owner):** approves architecture, production readiness, access and exceptions; assigns on-call/incident owner.
 - **Repository maintainers/reviewers:** review pull requests and protect the production branch.
 - **CEO:** approves strategic exceptions or material additional spending.
 - **SOP Library Team:** reviews and publishes this SOP under the library governance workflow.
@@ -88,7 +88,7 @@ Use R2 for images, PDFs, attachments, exports and other objects. Define allowed 
 Implement authentication, role-based authorization and tenant isolation where applicable. Validate all inputs; protect mutations and payment webhooks; record audit events for sensitive actions. For financial systems, use idempotency keys and verified payment-provider events; do not treat UI status alone as proof of payment. Add unit/integration tests, migrations tests, and security scanning. Every production change goes through pull request, review, tests and a release note.
 
 ### 8. Prepare production release
-Before going live, the Engineering Lead verifies:
+Before going live, the Development Lead verifies:
 - [ ] Application repository is owned by Blinto's GitHub organization and assigned to the appropriate verified team
 - [ ] GitHub, Cloudflare and Neon access provided through individual invitations with least privilege and MFA
 - [ ] Access register maintained; no shared passwords, owner logins or plaintext API keys
@@ -108,7 +108,7 @@ Before going live, the Engineering Lead verifies:
 Monitor availability, error rate, Cloudflare request/CPU usage, Neon storage/CU-hours/connection saturation/slow queries, R2 growth and monthly spend. Review alerts weekly and cost/capacity monthly. Evaluate Neon paid versus DigitalOcean Managed PostgreSQL **before** business-critical operations exceed free-tier recovery or compute limits; select a suitable paid/managed option using the criteria in Step 10. Scale or migrate only with measured justification; never assume migration is necessary just because user counts increase.
 
 ### 10. Evaluate paid PostgreSQL capacity and provider options
-Neon is Blinto's **default starting PostgreSQL provider**, not a permanent exclusive vendor. When free-tier limits, sustained usage, storage, connection demand, recovery objectives, reliability, or compliance requirements make an upgrade necessary, the Engineering Lead must compare **(A) an appropriate paid Neon plan** and **(B) DigitalOcean Managed PostgreSQL** before deciding. Other managed PostgreSQL services may be evaluated when justified.
+Neon is Blinto's **default starting PostgreSQL provider**, not a permanent exclusive vendor. When free-tier limits, sustained usage, storage, connection demand, recovery objectives, reliability, or compliance requirements make an upgrade necessary, the Development Lead must compare **(A) an appropriate paid Neon plan** and **(B) DigitalOcean Managed PostgreSQL** before deciding. Other managed PostgreSQL services may be evaluated when justified.
 
 Create a short written comparison based on the current published prices and Blinto's measured workload, covering:
 - **Total monthly cost:** compute (including idle/always-on usage), storage, data transfer, backup/PITR retention, high availability/standby, networking, connection pooling and any required support plan.
@@ -122,14 +122,14 @@ Create a short written comparison based on the current published prices and Blin
 Maintain standard PostgreSQL schema and versioned migrations. For a future move from Neon to DigitalOcean/AWS/another managed PostgreSQL service, inventory extensions, roles, storage, dependencies, backups and constraints; rehearse export/import or supported logical replication; test integrity, cutover, secrets rotation and application rollback. Require a maintenance/cutover plan and explicit owner. Do not describe migration as zero-downtime without validation.
 
 ## Exceptions and escalation
-- **Cloudflare incompatibility:** document required alternative runtime, expected costs and migration implications; Engineering Lead decides.
-- **Neon free-limit/recovery risk:** move to suitable paid service before authoritative business operations; Engineering Lead approves.
+- **Cloudflare incompatibility:** document required alternative runtime, expected costs and migration implications; Development Lead decides.
+- **Neon free-limit/recovery risk:** move to suitable paid service before authoritative business operations; Development Lead approves.
 - **Outage, data-loss or credential compromise:** invoke [Incident Escalation](./incident-escalation.md) and the [Credential & Password Management Policy](./credential-and-password-management-policy.md).
 - **Access changes:** follow [Access Provisioning & Deprovisioning](./access-provisioning-and-deprovisioning.md).
 - **Client-specific architectures:** honor client requirements subject to security and delivery review; do not silently force the internal standard.
 
 ## Records and ownership
-Keep architecture decisions, deployment instructions, migration scripts, data classification, RPO/RTO, restore-test evidence, release history, cost estimates, and exception approvals in the application repository or designated controlled records system. The Engineering Lead reviews this SOP at least every six months or when the platform materially changes.
+Keep architecture decisions, deployment instructions, migration scripts, data classification, RPO/RTO, restore-test evidence, release history, cost estimates, and exception approvals in the application repository or designated controlled records system. The Development Lead reviews this SOP at least every six months or when the platform materially changes.
 
 ## Related resources
 - [Access Provisioning & Deprovisioning](./access-provisioning-and-deprovisioning.md)

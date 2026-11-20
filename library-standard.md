@@ -1,11 +1,11 @@
 ---
 title: Blinto SOP Library Standard
 type: reference
-department: Company
+department: Operations & Finance
 owner: SOP Library Team
 status: approved
-version: 1.1
-last_reviewed: 2026-08-20
+version: 1.2
+last_reviewed: 2026-11-20
 review_cycle: annual
 tags:
   - sop-library
@@ -76,11 +76,11 @@ Every operational document must begin with YAML frontmatter.
 ---
 title: Client Onboarding
 type: sop
-department: Project Delivery
+department: Project Management
 owner: Project Delivery
 status: approved
 version: 1.0
-last_reviewed: 2026-08-20
+last_reviewed: 2026-11-20
 review_cycle: 6-months
 tags:
   - client
@@ -105,6 +105,29 @@ related:
 - `related`
 
 Allowed statuses are `draft`, `in-review`, `approved`, and `deprecated`.
+
+### Departments
+
+`department` is the single primary owning department responsible for maintaining and reviewing the document. Allowed values are:
+
+1. `People & Culture`
+2. `Operations & Finance`
+3. `Growth`
+4. `Development`
+5. `Design`
+6. `Project Management`
+7. `Product`
+8. `CEO's Office`
+
+When another department helps implement a document without co-owning it, list it under the optional `supporting_departments` field:
+
+```yaml
+department: Operations & Finance
+supporting_departments:
+  - People & Culture
+```
+
+See [Library Index & Roadmap](./library-index.md#department-ownership) for the current allocation.
 
 The `related` field uses repository slugs without `.md`. Every related slug should resolve to an existing canonical document unless it intentionally points to an explicitly planned resource described in the body.
 

@@ -1,8 +1,10 @@
 ---
 title: Final Settlement & Employee Dues Policy
 type: policy
-department: Company
-owner: People Operations
+department: People & Culture
+owner: People & Culture
+supporting_departments:
+  - Operations & Finance
 status: approved
 version: 1.0
 last_reviewed: 2026-11-12

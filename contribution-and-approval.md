@@ -1,7 +1,7 @@
 ---
 title: SOP Library Contribution & Approval
 type: sop
-department: Company
+department: Operations & Finance
 owner: SOP Library Team
 status: approved
 version: 1.0

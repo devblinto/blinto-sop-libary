@@ -1,8 +1,8 @@
 ---
 title: Overtime Policy
 type: policy
-department: Company
-owner: People Operations
+department: People & Culture
+owner: People & Culture
 status: approved
 version: 1.2
 last_reviewed: 2026-11-12

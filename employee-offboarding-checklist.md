@@ -1,8 +1,8 @@
 ---
 title: Employee Offboarding Checklist
 type: checklist
-department: People, Operations & Finance
-owner: People Operations
+department: People & Culture
+owner: People & Culture
 status: approved
 version: 1.1
 last_reviewed: 2026-11-02

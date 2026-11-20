@@ -1,8 +1,10 @@
 ---
 title: Information Security & Confidentiality Policy
 type: policy
-department: People, Operations & Finance
-owner: People Operations
+department: Operations & Finance
+owner: Operations & Finance
+supporting_departments:
+  - All departments
 status: approved
 version: 1.0
 last_reviewed: 2026-11-12
