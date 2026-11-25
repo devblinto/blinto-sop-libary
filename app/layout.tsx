@@ -20,12 +20,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 <small>SOP Library</small>
               </span>
             </Link>
-            <nav className="header-nav" aria-label="Primary navigation">
-              <Link href="/">Library</Link>
-              <a href="https://github.com/hifazlerabbi/Blinto-SOP-Library" target="_blank" rel="noreferrer">
-                GitHub
-              </a>
-            </nav>
           </div>
         </header>
         <main>{children}</main>

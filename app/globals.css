@@ -43,8 +43,6 @@ button, input, select { font: inherit; }
 }
 .brand span:last-child { display: grid; line-height: 1.1; }
 .brand small { margin-top: 3px; color: var(--muted); font-size: 11px; letter-spacing: .03em; }
-.header-nav { display: flex; gap: 22px; color: var(--muted); font-size: 14px; }
-.header-nav a:hover { color: var(--text); }
 .page-shell { padding: 54px 0 72px; }
 .hero {
   display: grid;
@@ -226,7 +224,6 @@ button, input, select { font: inherit; }
 
 @media (max-width: 640px) {
   .shell { width: min(100% - 24px, 1180px); }
-  .header-nav a:first-child { display: none; }
   .page-shell { padding-top: 28px; }
   .hero { gap: 28px; padding: 24px 0 34px; }
   .hero h1 { font-size: 42px; }

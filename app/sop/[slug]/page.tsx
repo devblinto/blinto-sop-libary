@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getAllDocuments, getDocument, getDocumentHeadings, renderMarkdown } from "@/lib/content";
+import { REPOSITORY_URL, getAllDocuments, getDocument, getDocumentHeadings, renderMarkdown } from "@/lib/content";
 
 export function generateStaticParams() {
   return getAllDocuments().map((doc) => ({ slug: doc.slug }));
@@ -12,7 +12,7 @@ export default async function SopPage({ params }: { params: Promise<{ slug: stri
   if (!result || result.document.status === "deprecated") notFound();
 
   const { document, markdown } = result;
-  const html = await renderMarkdown(markdown);
+  const html = await renderMarkdown(markdown, document.filePath);
   const headings = getDocumentHeadings(markdown).filter((heading) => heading.depth === 2);
   const allDocuments = getAllDocuments();
   const related = document.related
@@ -66,7 +66,7 @@ export default async function SopPage({ params }: { params: Promise<{ slug: stri
           </div>
           <a
             className="contribute-link"
-            href={`https://github.com/hifazlerabbi/Blinto-SOP-Library/edit/main/${document.filename}`}
+            href={`${REPOSITORY_URL}/edit/main/${document.filePath}`}
             target="_blank"
             rel="noreferrer"
           >

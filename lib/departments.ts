@@ -1,18 +1,12 @@
-// Canonical SOP Library department categories, in display order.
-// Keep in sync with library-standard.md and scripts/validate-library.mjs.
-export const DEPARTMENTS = [
-  "People & Culture",
-  "Operations & Finance",
-  "Growth",
-  "Development",
-  "Design",
-  "Project Management",
-  "Product",
-  "CEO's Office",
-] as const;
+import departments from "./departments.json";
+
+// Canonical SOP Library departments, in display order. Each department owns one
+// folder under docs/. Edit lib/departments.json (the single source of truth,
+// also read by scripts/validate-library.mjs) to add or rename a department.
+export const DEPARTMENTS: readonly string[] = departments.map((department) => department.name);
 
 export function departmentRank(department: string): number {
-  const index = (DEPARTMENTS as readonly string[]).indexOf(department);
+  const index = DEPARTMENTS.indexOf(department);
   return index === -1 ? DEPARTMENTS.length : index;
 }
 

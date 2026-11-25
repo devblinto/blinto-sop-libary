@@ -25,16 +25,28 @@ This private repository is the canonical source of truth for Blinto's operationa
 | `guide` | Helpful instructions or knowledge that are not a strict process |
 | `reference` | Standards, definitions, conventions, and quick-look-up information |
 
-Document type is metadata, not a folder. Operational Markdown documents should remain flat and discoverable through metadata, search, and links.
+## Repository Layout
+
+```text
+docs/<department>/        Every library document, filed under its owning department
+docs/_document-templates/ Starter skeletons for each document type
+AI-INSTRUCTIONS.md        Protocol for AI systems working in this repository
+app/ components/ lib/     Internal website, generated from docs/
+scripts/                  Library validation (npm run validate:library)
+```
+
+Department folders: `people-and-culture`, `operations-and-finance`, `growth`, `development`, `design`, `project-management`, `product`, `ceos-office`. A folder appears once it holds its first document.
+
+Document type is metadata, not a folder. Within a department, documents stay flat and are found through search, metadata, and links. See [Library Standard → Repository Structure](./docs/operations-and-finance/library-standard.md#repository-structure) for the full rules.
 
 ## Start Here
 
-- [Library Standard](./library-standard.md) — document model, metadata, naming, linking, and duplication rules
-- [Contribution & Approval](./contribution-and-approval.md) — how to request, create, improve, review, and publish documents
+- [Library Standard](./docs/operations-and-finance/library-standard.md) — document model, metadata, naming, linking, and duplication rules
+- [Contribution & Approval](./docs/operations-and-finance/contribution-and-approval.md) — how to request, create, improve, review, and publish documents
 - [AI Authoring Instructions](./AI-INSTRUCTIONS.md) — vendor-neutral protocol for AI systems creating, improving, migrating, or reviewing library content
-- [AI-Assisted SOP Authoring Workflow](./ai-authoring-workflow.md) — team-facing guide for creating or improving documentation through an AI assistant
-- [Migration Register](./migration-register.md) — control list for reviewing and consolidating existing Blinto SOPs and operational documents
-- [Document Templates](./.github/document-templates/) — starter Markdown skeletons for SOPs, checklists, templates, policies, guides, and references
+- [AI-Assisted SOP Authoring Workflow](./docs/operations-and-finance/ai-authoring-workflow.md) — team-facing guide for creating or improving documentation through an AI assistant
+- [Migration Register](./docs/operations-and-finance/migration-register.md) — control list for reviewing and consolidating existing Blinto SOPs and operational documents
+- [Document Templates](./docs/_document-templates/) — starter Markdown skeletons for SOPs, checklists, templates, policies, guides, and references
 
 ## AI-Assisted Contributions
 
@@ -45,3 +57,11 @@ The AI should search first, reuse canonical knowledge, ask only for missing oper
 ## Source of Truth
 
 GitHub `main` is authoritative. The future internal website is generated from this repository. Google Drive copies are backups only and must not become an editable second source of truth.
+
+## Working on the Website
+
+```bash
+npm install
+npm run dev       # local preview
+npm run check     # validate library, typecheck and build (same as CI)
+```

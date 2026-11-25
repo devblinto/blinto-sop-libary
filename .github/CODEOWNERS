@@ -1,5 +1,10 @@
 # Blinto SOP Library review ownership
 # Initial approval owner: Fazle Rabbi
+#
+# Documents are filed by owning department under docs/<department>/, so
+# department reviewers can be added per folder below the defaults, e.g.:
+#   /docs/people-and-culture/ @hifazlerabbi @people-reviewer
+# Later rules take precedence over earlier ones.
 
 *.md @hifazlerabbi
 .github/* @hifazlerabbi

@@ -1,0 +1,10 @@
+[
+  { "name": "People & Culture", "folder": "people-and-culture" },
+  { "name": "Operations & Finance", "folder": "operations-and-finance" },
+  { "name": "Growth", "folder": "growth" },
+  { "name": "Development", "folder": "development" },
+  { "name": "Design", "folder": "design" },
+  { "name": "Project Management", "folder": "project-management" },
+  { "name": "Product", "folder": "product" },
+  { "name": "CEO's Office", "folder": "ceos-office" }
+]

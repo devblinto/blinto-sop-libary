@@ -9,7 +9,7 @@ Your job is to turn operational knowledge into accurate, maintainable, interconn
 ## Authority
 
 - GitHub `main` is the canonical source of truth for published library content.
-- Follow [Library Standard](./library-standard.md) and [Contribution & Approval](./contribution-and-approval.md).
+- Follow [Library Standard](./docs/operations-and-finance/library-standard.md) and [Contribution & Approval](./docs/operations-and-finance/contribution-and-approval.md).
 - Existing legacy documents, conversations, notes, Drive files, or employee descriptions are **source evidence**, not automatically authoritative standards.
 - Never silently resolve conflicting operational rules. Surface the conflict and obtain confirmation from the appropriate human owner/reviewer.
 
@@ -140,7 +140,9 @@ If a material rule is missing, outdated, contradictory, or uncertain, mark it fo
 
 ### 6. Draft canonically
 
-Follow the metadata and naming rules in `library-standard.md`.
+Follow the metadata and naming rules in the [Library Standard](./docs/operations-and-finance/library-standard.md).
+
+Save the document as `docs/<department-folder>/<slug>.md`, where the folder matches the `department` frontmatter (see `lib/departments.json`) and the slug is unique across the whole library. Start from the matching skeleton in `docs/_document-templates/`. Run `npm run validate:library` before submitting.
 
 For SOPs, use only useful sections, normally:
 
